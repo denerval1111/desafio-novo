@@ -17,7 +17,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   ctaLink,
   secondaryCtaText,
   secondaryCtaLink,
-  backgroundImage = '/images/hero-background.jpg'
+  backgroundImage = '/images/placeholder_nature_minimalist.jpeg' // Alterado para a imagem correta
 }) => {
   return (
     <section 
@@ -25,7 +25,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center'
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat' // Adicionado para evitar repetição/alongamento
       }}
     >
       <div className="container-custom relative z-10">
