@@ -17,16 +17,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   ctaLink,
   secondaryCtaText,
   secondaryCtaLink,
- backgroundImage = 
+  backgroundImage = "", // Adicionado valor padrão para backgroundImage
 }) => {
   return (
     <section 
       className="relative min-h-[80vh] flex items-center"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
+        backgroundImage: backgroundImage ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})` : undefined,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat' // Adicionado para evitar repetição/alongamento
+        backgroundRepeat: 'no-repeat'
       }}
     >
       <div className="container-custom relative z-10">
