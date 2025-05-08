@@ -227,23 +227,32 @@ export default function Inscricao() {
                     <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span>Acesso a todos os materiais educativos</span>
+                    <span>Sessões semanais em grupo</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span>Participação na comunidade virtual</span>
+                    <span>Material educativo</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Comunidade virtual</span>
                   </li>
                 </ul>
                 <div className="text-center">
-                  <a href="#formulario-inscricao" className="btn-primary inline-block px-6 py-3">
+                  <a href="#formulario-inscricao" className="btn-primary inline-block px-6 py-3 w-full">
                     Inscrever-se no Plano Básico
                   </a>
                 </div>
               </div>
               
-              <div className="bg-white p-8 rounded-xl shadow-sm">
+              <div className="bg-white p-8 rounded-xl shadow-sm border-2 border-verde-vitalidade relative">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-verde-vitalidade text-white text-sm px-3 py-1 rounded-full">
+                  Mais Popular
+                </div>
                 <div className="text-center mb-6">
                   <h3 className="text-xl font-semibold mb-2">Plano Premium</h3>
                   <div className="text-3xl font-bold text-verde-vitalidade mb-1">R$ 2.997</div>
@@ -261,17 +270,23 @@ export default function Inscricao() {
                     <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span>Sessões de consultoria individual</span>
+                    <span>2 sessões de consultoria individual</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span>Acesso prioritário a novas turmas e eventos</span>
+                    <span>Acesso prioritário a novas turmas e workshops</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Kit de boas-vindas com materiais exclusivos</span>
                   </li>
                 </ul>
                 <div className="text-center">
-                  <a href="#formulario-inscricao" className="btn-primary inline-block px-6 py-3">
+                  <a href="#formulario-inscricao" className="btn-primary inline-block px-6 py-3 w-full">
                     Inscrever-se no Plano Premium
                   </a>
                 </div>
@@ -280,8 +295,8 @@ export default function Inscricao() {
               <div className="bg-white p-8 rounded-xl shadow-sm">
                 <div className="text-center mb-6">
                   <h3 className="text-xl font-semibold mb-2">Plano Personalizado</h3>
-                  <div className="text-3xl font-bold text-verde-vitalidade mb-1">Sob Consulta</div>
-                  <p className="text-cinza-medio">Entre em contato para um orçamento</p>
+                  <div className="text-3xl font-bold text-verde-vitalidade mb-1">Consulte</div>
+                  <p className="text-cinza-medio">Sob medida para você</p>
                 </div>
                 
                 <ul className="space-y-3 mb-8">
@@ -301,12 +316,18 @@ export default function Inscricao() {
                     <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span>Acesso VIP a todos os recursos e eventos</span>
+                    <span>Acompanhamento exclusivo com especialistas</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Flexibilidade total de horários</span>
                   </li>
                 </ul>
                 <div className="text-center">
-                  <a href="#formulario-inscricao" className="btn-primary inline-block px-6 py-3">
-                    Solicitar Orçamento Personalizado
+                  <a href="#contato" className="btn-secondary inline-block px-6 py-3 w-full">
+                    Solicitar Orçamento
                   </a>
                 </div>
               </div>
@@ -318,30 +339,116 @@ export default function Inscricao() {
         <section id="formulario-inscricao" className="section">
           <div className="container-custom">
             <h2 className="text-3xl font-bold mb-12 text-center">Formulário de Inscrição</h2>
-            <form className="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-md">
-              <div className="mb-4">
-                <label htmlFor="nome" className="block text-sm font-medium text-gray-700">Nome Completo</label>
-                <input type="text" name="nome" id="nome" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+            
+            <form className="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-sm">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label htmlFor="nome" className="block text-sm font-medium text-cinza-escuro mb-1">Nome Completo</label>
+                  <input type="text" name="nome" id="nome" required className="input-form w-full" />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-cinza-escuro mb-1">Email</label>
+                  <input type="email" name="email" id="email" required className="input-form w-full" />
+                </div>
               </div>
-              <div className="mb-4">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Endereço de Email</label>
-                <input type="email" name="email" id="email" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label htmlFor="telefone" className="block text-sm font-medium text-cinza-escuro mb-1">Telefone</label>
+                  <input type="tel" name="telefone" id="telefone" required className="input-form w-full" />
+                </div>
+                <div>
+                  <label htmlFor="data_nascimento" className="block text-sm font-medium text-cinza-escuro mb-1">Data de Nascimento</label>
+                  <input type="date" name="data_nascimento" id="data_nascimento" required className="input-form w-full" />
+                </div>
               </div>
+              
               <div className="mb-6">
-                <label htmlFor="mensagem" className="block text-sm font-medium text-gray-700">Mensagem (opcional)</label>
-                <textarea name="mensagem" id="mensagem" rows="4" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
+                <label htmlFor="turma" className="block text-sm font-medium text-cinza-escuro mb-1">Turma Desejada</label>
+                <select name="turma" id="turma" required className="input-form w-full">
+                  <option value="">Selecione uma turma</option>
+                  <option value="maio2025">Turma Maio 2025</option>
+                  <option value="junho2025">Turma Junho 2025</option>
+                  <option value="julho2025">Turma Julho 2025</option>
+                </select>
               </div>
-              <div className="text-right">
-                <button type="submit" className="btn-primary">
+              
+              <div className="mb-6">
+                <label htmlFor="plano" className="block text-sm font-medium text-cinza-escuro mb-1">Plano Escolhido</label>
+                <select name="plano" id="plano" required className="input-form w-full">
+                  <option value="">Selecione um plano</option>
+                  <option value="basico">Plano Básico</option>
+                  <option value="premium">Plano Premium</option>
+                  <option value="personalizado">Plano Personalizado (Entraremos em contato)</option>
+                </select>
+              </div>
+              
+              <div className="mb-6">
+                <label htmlFor="mensagem" className="block text-sm font-medium text-cinza-escuro mb-1">Mensagem (Opcional)</label>
+                <textarea name="mensagem" id="mensagem" rows={4} className="input-form w-full"></textarea>
+              </div>
+              
+              <div className="mb-6">
+                <label className="flex items-center">
+                  <input type="checkbox" name="termos" required className="h-4 w-4 text-verde-vitalidade border-cinza-claro rounded focus:ring-verde-vitalidade" />
+                  <span className="ml-2 text-sm text-cinza-escuro">
+                    Eu li e concordo com os <a href="/termos-e-condicoes" className="text-verde-vitalidade hover:underline">Termos e Condições</a> do programa.
+                  </span>
+                </label>
+              </div>
+              
+              <div className="text-center">
+                <button type="submit" className="btn-primary inline-block px-8 py-3">
                   Enviar Inscrição
                 </button>
               </div>
             </form>
           </div>
         </section>
+        
+        {/* FAQ */}
+        <section className="section">
+          <div className="container-custom">
+            <h2 className="text-3xl font-bold mb-12 text-center">Perguntas Frequentes</h2>
+            
+            <div className="max-w-3xl mx-auto space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Qual o público-alvo do Desafio Vitalidade?</h3>
+                <p className="text-cinza-medio">
+                  O programa é ideal para homens e mulheres acima de 40 anos, tanto pessoas saudáveis que buscam otimizar sua longevidade, quanto portadoras de condições crônicas que desejam melhorar sua qualidade de vida.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Preciso ter algum conhecimento prévio sobre saúde ou nutrição?</h3>
+                <p className="text-cinza-medio">
+                  Não. O Desafio Vitalidade é desenhado para ser acessível a todos, independentemente do seu nível de conhecimento. Forneceremos todas as informações e suporte necessários.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">As sessões em grupo são obrigatórias?</h3>
+                <p className="text-cinza-medio">
+                  Embora altamente recomendadas para o máximo aproveitamento do programa e interação com especialistas e outros participantes, a participação não é estritamente obrigatória. Todo o material será disponibilizado.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">O que acontece após os 30 dias do programa?</h3>
+                <p className="text-cinza-medio">
+                  Ao final do desafio, você receberá uma avaliação final e um plano de manutenção para continuar aplicando os aprendizados em sua rotina. Além disso, terá a opção de continuar em nossa comunidade e acessar conteúdos exclusivos.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Existe alguma garantia de resultados?</h3>
+                <p className="text-cinza-medio">
+                  Os resultados podem variar de pessoa para pessoa, mas o programa é baseado em evidências científicas sólidas e, com seu comprometimento, esperamos que você alcance melhorias significativas em sua saúde e bem-estar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
       </main>
+      
       <Footer />
     </>
   );
-}
 }
