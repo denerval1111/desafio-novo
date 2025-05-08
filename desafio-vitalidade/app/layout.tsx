@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { defaultMetadata, generateMetadata } from '@/lib/metadata';
+import metadata from './lib/metadata';
 import './globals.css';
 import './responsive.css';
 import { Inter } from 'next/font/google';
