@@ -17,7 +17,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   ctaLink,
   secondaryCtaText,
   secondaryCtaLink,
-  backgroundImage = '/images/placeholder_nature_minimalist.jpeg' // Alterado para a imagem correta
+ backgroundImage = 
 }) => {
   return (
     <section 
