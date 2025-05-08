@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Cores primárias */
+  --verde-vitalidade: #2E8B57;
+  --azul-longevidade: #4682B4;
+  
+  /* Cores secundárias */
+  --terracota-nutricao: #CD5C5C;
+  --amarelo-energia: #F0E68C;
+  
+  /* Cores neutras */
+  --branco-puro: #FFFFFF;
+  --cinza-claro: #F5F5F5;
+  --cinza-medio: #808080;
+  --cinza-escuro: #333333;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat font-bold;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl leading-snug;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl leading-snug;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  p {
+    @apply font-opensans text-base md:text-lg leading-relaxed;
+  }
+
+  a {
+    @apply text-azul-longevidade hover:underline transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-verde-vitalidade text-white py-3 px-6 rounded-lg font-montserrat font-semibold hover:bg-opacity-90 transition-all duration-300 inline-block;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-verde-vitalidade border-2 border-verde-vitalidade py-3 px-6 rounded-lg font-montserrat font-semibold hover:bg-verde-vitalidade/10 transition-all duration-300 inline-block;
+  }
+
+  .btn-tertiary {
+    @apply bg-transparent text-azul-longevidade py-2 px-4 font-montserrat font-semibold hover:underline transition-all duration-200 inline-block;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300;
+  }
+
+  .card-highlight {
+    @apply bg-white rounded-xl shadow-md p-6 border-t-4 border-verde-vitalidade hover:shadow-lg transition-shadow duration-300;
+  }
+
+  .card-pilar {
+    @apply bg-white rounded-xl shadow-md p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-12 md:py-20;
+  }
+
+  .section-title {
+    @apply text-center mb-12;
+  }
+
+  .section-title h2 {
+    @apply mb-4;
+  }
+
+  .section-title p {
+    @apply text-cinza-medio max-w-3xl mx-auto;
+  }
+}
+
+/* Gradientes */
+.gradient-vitalidade {
+  background: linear-gradient(135deg, var(--verde-vitalidade), var(--azul-longevidade));
+}
+
+.gradient-energia {
+  background: linear-gradient(135deg, var(--amarelo-energia), var(--terracota-nutricao));
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.5s ease-out;
+}
+
+/* Utilitários personalizados */
+.text-verde-vitalidade {
+  color: var(--verde-vitalidade);
+}
+
+.text-azul-longevidade {
+  color: var(--azul-longevidade);
+}
+
+.text-terracota-nutricao {
+  color: var(--terracota-nutricao);
+}
+
+.bg-verde-vitalidade {
+  background-color: var(--verde-vitalidade);
+}
+
+.bg-azul-longevidade {
+  background-color: var(--azul-longevidade);
+}
+
+.bg-cinza-claro {
+  background-color: var(--cinza-claro);
+}
+
+.border-verde-vitalidade {
+  border-color: var(--verde-vitalidade);
+}
+
+.border-azul-longevidade {
+  border-color: var(--azul-longevidade);
+}
