@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
+import Header from '@/components/Header'; // Corrigido o caminho da importação
+import Footer from '@/components/Footer'; // Corrigido o caminho da importação
 
 export default function Inscricao() {
   return (
@@ -225,5 +225,122 @@ export default function Inscricao() {
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"
-(Content truncated due to size limit. Use line ranges to read in chunks)
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Acesso a todos os materiais educativos</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Participação na comunidade virtual</span>
+                  </li>
+                </ul>
+                <div className="text-center">
+                  <a href="#formulario-inscricao" className="btn-primary inline-block px-6 py-3">
+                    Inscrever-se no Plano Básico
+                  </a>
+                </div>
+              </div>
+              
+              <div className="bg-white p-8 rounded-xl shadow-sm">
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-semibold mb-2">Plano Premium</h3>
+                  <div className="text-3xl font-bold text-verde-vitalidade mb-1">R$ 2.997</div>
+                  <p className="text-cinza-medio">Pagamento único</p>
+                </div>
+                
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Todos os benefícios do Plano Básico</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Sessões de consultoria individual</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Acesso prioritário a novas turmas e eventos</span>
+                  </li>
+                </ul>
+                <div className="text-center">
+                  <a href="#formulario-inscricao" className="btn-primary inline-block px-6 py-3">
+                    Inscrever-se no Plano Premium
+                  </a>
+                </div>
+              </div>
+              
+              <div className="bg-white p-8 rounded-xl shadow-sm">
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-semibold mb-2">Plano Personalizado</h3>
+                  <div className="text-3xl font-bold text-verde-vitalidade mb-1">Sob Consulta</div>
+                  <p className="text-cinza-medio">Entre em contato para um orçamento</p>
+                </div>
+                
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Programa totalmente adaptado às suas necessidades</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Consultoria individual ilimitada</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Acesso VIP a todos os recursos e eventos</span>
+                  </li>
+                </ul>
+                <div className="text-center">
+                  <a href="#formulario-inscricao" className="btn-primary inline-block px-6 py-3">
+                    Solicitar Orçamento Personalizado
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Formulário de Inscrição */}
+        <section id="formulario-inscricao" className="section">
+          <div className="container-custom">
+            <h2 className="text-3xl font-bold mb-12 text-center">Formulário de Inscrição</h2>
+            <form className="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-md">
+              <div className="mb-4">
+                <label htmlFor="nome" className="block text-sm font-medium text-gray-700">Nome Completo</label>
+                <input type="text" name="nome" id="nome" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Endereço de Email</label>
+                <input type="email" name="email" id="email" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+              </div>
+              <div className="mb-6">
+                <label htmlFor="mensagem" className="block text-sm font-medium text-gray-700">Mensagem (opcional)</label>
+                <textarea name="mensagem" id="mensagem" rows="4" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
+              </div>
+              <div className="text-right">
+                <button type="submit" className="btn-primary">
+                  Enviar Inscrição
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
