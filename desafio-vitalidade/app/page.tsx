@@ -1,453 +1,190 @@
 import React from 'react';
-import Header from '@/components/Header'; // Corrigido o caminho da importação
-import Footer from '@/components/Footer'; // Corrigido o caminho da importação
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+// import Image from 'next/image'; // Descomente se preferir usar o componente Image do Next.js
 
-export default function Inscricao() {
+// Dados da Home Page (baseado em estrutura_site.txt)
+const homePageData = {
+  hero: {
+    title: "Envelheça com Vitalidade: Transforme sua Saúde em 30 Dias",
+    subtitle: "Um programa multidisciplinar baseado em ciência para longevidade saudável",
+    ctaPrimary: { text: "Inscreva-se Agora", link: "/inscricao" },
+    ctaSecondary: { text: "Saiba Mais", link: "/sobre/programa" },
+    backgroundImage: "/images/hero-background.jpg" // Certifique-se que esta imagem está em public/images/
+  },
+  benefits: {
+    title: "Benefícios do Desafio Vitalidade",
+    description: "Transforme sua saúde e qualidade de vida com nosso programa de 30 dias.",
+    items: [
+      {
+        icon: "/images/placeholder_zen_stones.jpeg", // Certifique-se que esta imagem está em public/images/
+        title: "Estimule a Autofagia",
+        description: "Ative os mecanismos naturais de limpeza celular e renovação do seu corpo."
+      },
+      {
+        icon: "/images/placeholder_nature_minimalist.jpeg", // Certifique-se que esta imagem está em public/images/
+        title: "Preserve seus Telômeros",
+        description: "Proteja o DNA e retarde o envelhecimento celular com práticas cientificamente comprovadas."
+      },
+      {
+        icon: "/images/placeholder_healthy_food_minimalist.jpeg", // Certifique-se que esta imagem está em public/images/
+        title: "Otimize seu Metabolismo",
+        description: "Melhore sua energia e vitalidade com nutrição personalizada e suplementação estratégica."
+      },
+      {
+        icon: "/images/placeholder_meditation_minimalist.jpeg", // Certifique-se que esta imagem está em public/images/
+        title: "Fortaleça sua Mente",
+        description: "Desenvolva resiliência mental e emocional para enfrentar os desafios da vida moderna."
+      }
+    ]
+  },
+  aboutProgram: {
+    title: "Sobre o Programa Desafio Vitalidade",
+    introduction: "Uma breve introdução ao Desafio Vitalidade, destacando a duração de 30 dias e o formato online.",
+    link: "/sobre/programa",
+    image: "/images/placeholder_about_program.jpg" // Substitua por uma imagem representativa em public/images/
+  },
+  pilares: {
+    title: "Os Quatro Pilares do Programa",
+    subtitle: "Uma abordagem integrada para longevidade saudável baseada em evidências científicas.",
+    items: [
+      {
+        icon: "/images/placeholder_nature_minimalist.jpeg", // Reutilizando, mas pode ser específico
+        title: "Medicina Regenerativa",
+        description: "Estimule a autofagia, preserve telômeros e ative células-tronco.",
+        link: "/pilares/medicina-regenerativa"
+      },
+      {
+        icon: "/images/placeholder_healthy_food_minimalist.jpeg", // Reutilizando
+        title: "Nutrologia",
+        description: "Combine o melhor das dietas mediterrânea e asiática adaptadas.",
+        link: "/pilares/nutrologia"
+      },
+      {
+        icon: "/images/placeholder_meditation_minimalist.jpeg", // Reutilizando
+        title: "Saúde Mental",
+        description: "Técnicas de motivação e enfrentamento da ansiedade.",
+        link: "/pilares/saude-mental"
+      },
+      {
+        icon: "/images/placeholder_yoga_flatlay.jpeg", // Certifique-se que esta imagem está em public/images/
+        title: "Gerenciamento de Peso",
+        description: "Emagreça sem sofrimento com estratégias sustentáveis.",
+        link: "/pilares/gerenciamento-peso"
+      }
+    ]
+  },
+  testimonials: {
+    title: "O que Nossos Alunos Dizem",
+    items: [
+      { photo: "/images/testimonial_1.jpg", name: "Maria S.", age: 52, quote: "Transformador! Recuperei minha energia e disposição.", result: "Perdeu 5kg e melhorou o sono" }, // Substitua por imagens reais
+      { photo: "/images/testimonial_2.jpg", name: "João P.", age: 48, quote: "Aprendi a cuidar de mim de verdade.", result: "Reduziu o estresse e ganhou mais foco" },
+      { photo: "/images/testimonial_3.jpg", name: "Ana L.", age: 60, quote: "Recomendo a todos que buscam uma vida mais saudável.", result: "Melhorou indicadores de saúde" }
+    ]
+  },
+  // Adicionar outras seções conforme estrutura_site.txt: Números e Credibilidade, Prévia do Conteúdo, CTA Final, FAQ Rápido
+};
+
+export default function HomePage() {
+  const { hero, benefits, aboutProgram, pilares, testimonials } = homePageData;
+
   return (
     <>
       <Header />
-      
-      <main className="pt-24 pb-16">
-        {/* Hero da página */}
-        <section className="bg-verde-vitalidade/10 py-16">
-          <div className="container-custom">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-verde-vitalidade">Inscreva-se no Desafio Vitalidade</h1>
-              <p className="text-xl text-cinza-medio">
-                Dê o primeiro passo em direção a uma vida mais longa, saudável e plena
-              </p>
+      <main className="pt-20 pb-16 text-gray-800">
+        {/* Hero Section */}
+        <section
+          className="relative bg-cover bg-center py-32 text-white min-h-[70vh] flex items-center justify-center"
+          style={{ backgroundImage: `url(${hero.backgroundImage})` }}
+        >
+          <div className="absolute inset-0 bg-black opacity-60"></div>
+          <div className="container-custom mx-auto px-4 relative z-10 text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">{hero.title}</h1>
+            <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto">{hero.subtitle}</p>
+            <div>
+              <a href={hero.ctaPrimary.link} className="bg-verde-vitalidade hover:bg-verde-vitalidade-dark text-white font-bold py-3 px-8 rounded-lg text-lg mr-0 mb-4 md:mr-4 md:mb-0 inline-block transition-colors duration-300">{hero.ctaPrimary.text}</a>
+              <a href={hero.ctaSecondary.link} className="bg-transparent hover:bg-white hover:text-gray-800 text-white font-bold py-3 px-8 rounded-lg border-2 border-white text-lg inline-block transition-colors duration-300">{hero.ctaSecondary.text}</a>
             </div>
           </div>
         </section>
-        
-        {/* Informações do Programa */}
-        <section className="section">
-          <div className="container-custom">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Sobre o Programa</h2>
-                <p className="mb-4">
-                  O Desafio Vitalidade é um programa de 30 dias desenvolvido por especialistas em medicina regenerativa não intervencionista, nutrologia e psiquiatria, focado em promover longevidade saudável e prevenir doenças crônicas relacionadas à idade.
-                </p>
-                <p className="mb-4">
-                  Durante o programa, você terá acesso a um conjunto abrangente de estratégias cientificamente validadas para otimizar sua saúde em múltiplos níveis, desde a função celular até o bem-estar mental e emocional.
-                </p>
-                <p className="mb-6">
-                  Nosso objetivo é não apenas proporcionar resultados durante os 30 dias, mas criar uma mudança de paradigma que você possa incorporar como rotina diária para benefícios duradouros.
-                </p>
-                
-                <h3 className="text-xl font-semibold mb-4">O Programa Inclui:</h3>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Avaliação inicial personalizada</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Plano individualizado abrangendo os quatro pilares do programa</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Sessões semanais em grupo com especialistas (online)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Material educativo completo e recursos práticos</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Acesso à comunidade virtual de participantes</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Suporte contínuo durante todo o programa</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Avaliação final e plano de manutenção pós-programa</span>
-                  </li>
-                </ul>
-                
-                <div className="bg-cinza-claro p-4 rounded-lg">
-                  <p className="italic">
-                    "O Desafio Vitalidade não é apenas mais um programa de saúde. É uma jornada transformadora baseada em ciência de ponta, que aborda as causas fundamentais do envelhecimento e das doenças crônicas."
-                  </p>
-                  <p className="mt-2 font-semibold">
-                    - Dr. Ricardo Mendes, Fundador do Desafio Vitalidade
-                  </p>
+
+        {/* Benefits Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="container-custom mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-700">{benefits.title}</h2>
+            <p className="text-lg text-center text-gray-600 mb-12 max-w-2xl mx-auto">{benefits.description}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {benefits.items.map((benefit, index) => (
+                <div key={index} className="bg-white p-6 rounded-xl shadow-lg text-center flex flex-col items-center hover:shadow-2xl transition-shadow duration-300">
+                  <img src={benefit.icon} alt={benefit.title} className="w-20 h-20 mx-auto mb-6 rounded-full object-cover" />
+                  {/* <Image src={benefit.icon} alt={benefit.title} width={80} height={80} className="mx-auto mb-6 rounded-full object-cover" /> */}
+                  <h3 className="text-xl font-semibold mb-3 text-verde-vitalidade">{benefit.title}</h3>
+                  <p className="text-gray-600 text-sm">{benefit.description}</p>
                 </div>
-              </div>
-              
-              <div className="bg-cinza-claro p-8 rounded-xl">
-                <h2 className="text-2xl font-bold mb-6 text-center">Próximas Turmas</h2>
-                
-                <div className="space-y-6">
-                  <div className="bg-white p-6 rounded-lg shadow-sm">
-                    <div className="flex justify-between items-center mb-4">
-                      <h3 className="text-xl font-semibold">Turma Maio 2025</h3>
-                      <span className="bg-verde-vitalidade text-white text-sm px-3 py-1 rounded-full">Vagas Disponíveis</span>
-                    </div>
-                    <ul className="space-y-2 mb-4">
-                      <li className="flex items-start">
-                        <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
-                        <span><strong>Início:</strong> 12 de Maio de 2025</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        <span><strong>Horário das sessões:</strong> Terças e Quintas, 19h-20h30</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-                        <span><strong>Vagas:</strong> 12/20 disponíveis</span>
-                      </li>
-                    </ul>
-                    <div className="text-center">
-                      <a href="#formulario-inscricao" className="btn-primary inline-block px-6 py-3">
-                        Inscrever-se nesta turma
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-white p-6 rounded-lg shadow-sm">
-                    <div className="flex justify-between items-center mb-4">
-                      <h3 className="text-xl font-semibold">Turma Junho 2025</h3>
-                      <span className="bg-verde-vitalidade text-white text-sm px-3 py-1 rounded-full">Vagas Disponíveis</span>
-                    </div>
-                    <ul className="space-y-2 mb-4">
-                      <li className="flex items-start">
-                        <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
-                        <span><strong>Início:</strong> 9 de Junho de 2025</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        <span><strong>Horário das sessões:</strong> Segundas e Quartas, 19h-20h30</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-                        <span><strong>Vagas:</strong> 16/20 disponíveis</span>
-                      </li>
-                    </ul>
-                    <div className="text-center">
-                      <a href="#formulario-inscricao" className="btn-primary inline-block px-6 py-3">
-                        Inscrever-se nesta turma
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-white p-6 rounded-lg shadow-sm">
-                    <div className="flex justify-between items-center mb-4">
-                      <h3 className="text-xl font-semibold">Turma Julho 2025</h3>
-                      <span className="bg-verde-vitalidade text-white text-sm px-3 py-1 rounded-full">Vagas Disponíveis</span>
-                    </div>
-                    <ul className="space-y-2 mb-4">
-                      <li className="flex items-start">
-                        <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
-                        <span><strong>Início:</strong> 7 de Julho de 2025</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        <span><strong>Horário das sessões:</strong> Terças e Quintas, 10h-11h30</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-                        <span><strong>Vagas:</strong> 20/20 disponíveis</span>
-                      </li>
-                    </ul>
-                    <div className="text-center">
-                      <a href="#formulario-inscricao" className="btn-primary inline-block px-6 py-3">
-                        Inscrever-se nesta turma
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="mt-6 text-center">
-                  <p className="text-cinza-medio">
-                    Não encontrou um horário adequado? Entre em contato para verificar a disponibilidade de consultoria individual.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
-        
-        {/* Investimento */}
-        <section className="section bg-cinza-claro">
-          <div className="container-custom">
-            <h2 className="text-3xl font-bold mb-12 text-center">Investimento</h2>
-            
+
+        {/* About Program Section */}
+        <section className="py-16">
+          <div className="container-custom mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+            <div className="md:w-1/2 text-center md:text-left">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-700">{aboutProgram.title}</h2>
+              <p className="text-gray-600 mb-6 text-lg">{aboutProgram.introduction}</p>
+              <a href={aboutProgram.link} className="text-verde-vitalidade hover:text-verde-vitalidade-dark font-semibold text-lg">Saiba mais sobre o programa &rarr;</a>
+            </div>
+            <div className="md:w-1/2 mt-8 md:mt-0">
+              <img src={aboutProgram.image} alt="Sobre o Programa Desafio Vitalidade" className="rounded-lg shadow-xl w-full h-auto object-cover max-h-96" />
+              {/* <Image src={aboutProgram.image} alt="Sobre o Programa Desafio Vitalidade" width={600} height={400} className="rounded-lg shadow-xl w-full h-auto object-cover" /> */}
+            </div>
+          </div>
+        </section>
+
+        {/* Pilares Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="container-custom mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-700">{pilares.title}</h2>
+            <p className="text-lg text-center text-gray-600 mb-12 max-w-2xl mx-auto">{pilares.subtitle}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {pilares.items.map((pilar, index) => (
+                <div key={index} className="bg-white p-6 rounded-xl shadow-lg text-center flex flex-col items-center hover:shadow-2xl transition-shadow duration-300">
+                  <img src={pilar.icon} alt={pilar.title} className="w-16 h-16 mx-auto mb-5 rounded-full object-cover" />
+                  {/* <Image src={pilar.icon} alt={pilar.title} width={64} height={64} className="mx-auto mb-5 rounded-full object-cover" /> */}
+                  <h3 className="text-xl font-semibold mb-3 text-verde-vitalidade">{pilar.title}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{pilar.description}</p>
+                  <a href={pilar.link} className="text-verde-vitalidade hover:text-verde-vitalidade-dark font-semibold text-sm mt-auto">Conheça o Pilar &rarr;</a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-16">
+          <div className="container-custom mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-700">{testimonials.title}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-8 rounded-xl shadow-sm">
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-semibold mb-2">Plano Básico</h3>
-                  <div className="text-3xl font-bold text-verde-vitalidade mb-1">R$ 1.997</div>
-                  <p className="text-cinza-medio">Pagamento único</p>
+              {testimonials.items.map((testimonial, index) => (
+                <div key={index} className="bg-white p-8 rounded-xl shadow-xl flex flex-col text-center hover:shadow-2xl transition-shadow duration-300">
+                  <img src={testimonial.photo} alt={testimonial.name} className="w-24 h-24 mx-auto mb-4 rounded-full object-cover border-4 border-verde-vitalidade" />
+                  {/* <Image src={testimonial.photo} alt={testimonial.name} width={96} height={96} className="mx-auto mb-4 rounded-full object-cover border-4 border-verde-vitalidade" /> */}
+                  <p className="text-gray-600 italic mb-4 text-md">"{testimonial.quote}"</p>
+                  <h4 className="font-bold text-lg text-gray-700">{testimonial.name}, {testimonial.age}</h4>
+                  <p className="text-sm text-verde-vitalidade font-semibold mt-1">{testimonial.result}</p>
                 </div>
-                
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Programa completo de 30 dias</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Sessões semanais em grupo</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Material educativo</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Comunidade virtual</span>
-                  </li>
-                </ul>
-                <div className="text-center">
-                  <a href="#formulario-inscricao" className="btn-primary inline-block px-6 py-3 w-full">
-                    Inscrever-se no Plano Básico
-                  </a>
-                </div>
-              </div>
-              
-              <div className="bg-white p-8 rounded-xl shadow-sm border-2 border-verde-vitalidade relative">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-verde-vitalidade text-white text-sm px-3 py-1 rounded-full">
-                  Mais Popular
-                </div>
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-semibold mb-2">Plano Premium</h3>
-                  <div className="text-3xl font-bold text-verde-vitalidade mb-1">R$ 2.997</div>
-                  <p className="text-cinza-medio">Pagamento único</p>
-                </div>
-                
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Todos os benefícios do Plano Básico</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>2 sessões de consultoria individual</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Acesso prioritário a novas turmas e workshops</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Kit de boas-vindas com materiais exclusivos</span>
-                  </li>
-                </ul>
-                <div className="text-center">
-                  <a href="#formulario-inscricao" className="btn-primary inline-block px-6 py-3 w-full">
-                    Inscrever-se no Plano Premium
-                  </a>
-                </div>
-              </div>
-              
-              <div className="bg-white p-8 rounded-xl shadow-sm">
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-semibold mb-2">Plano Personalizado</h3>
-                  <div className="text-3xl font-bold text-verde-vitalidade mb-1">Consulte</div>
-                  <p className="text-cinza-medio">Sob medida para você</p>
-                </div>
-                
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Programa totalmente adaptado às suas necessidades</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Consultoria individual ilimitada</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Acompanhamento exclusivo com especialistas</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-verde-vitalidade mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Flexibilidade total de horários</span>
-                  </li>
-                </ul>
-                <div className="text-center">
-                  <a href="#contato" className="btn-secondary inline-block px-6 py-3 w-full">
-                    Solicitar Orçamento
-                  </a>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
-        
-        {/* Formulário de Inscrição */}
-        <section id="formulario-inscricao" className="section">
-          <div className="container-custom">
-            <h2 className="text-3xl font-bold mb-12 text-center">Formulário de Inscrição</h2>
-            
-            <form className="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-sm">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label htmlFor="nome" className="block text-sm font-medium text-cinza-escuro mb-1">Nome Completo</label>
-                  <input type="text" name="nome" id="nome" required className="input-form w-full" />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-cinza-escuro mb-1">Email</label>
-                  <input type="email" name="email" id="email" required className="input-form w-full" />
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label htmlFor="telefone" className="block text-sm font-medium text-cinza-escuro mb-1">Telefone</label>
-                  <input type="tel" name="telefone" id="telefone" required className="input-form w-full" />
-                </div>
-                <div>
-                  <label htmlFor="data_nascimento" className="block text-sm font-medium text-cinza-escuro mb-1">Data de Nascimento</label>
-                  <input type="date" name="data_nascimento" id="data_nascimento" required className="input-form w-full" />
-                </div>
-              </div>
-              
-              <div className="mb-6">
-                <label htmlFor="turma" className="block text-sm font-medium text-cinza-escuro mb-1">Turma Desejada</label>
-                <select name="turma" id="turma" required className="input-form w-full">
-                  <option value="">Selecione uma turma</option>
-                  <option value="maio2025">Turma Maio 2025</option>
-                  <option value="junho2025">Turma Junho 2025</option>
-                  <option value="julho2025">Turma Julho 2025</option>
-                </select>
-              </div>
-              
-              <div className="mb-6">
-                <label htmlFor="plano" className="block text-sm font-medium text-cinza-escuro mb-1">Plano Escolhido</label>
-                <select name="plano" id="plano" required className="input-form w-full">
-                  <option value="">Selecione um plano</option>
-                  <option value="basico">Plano Básico</option>
-                  <option value="premium">Plano Premium</option>
-                  <option value="personalizado">Plano Personalizado (Entraremos em contato)</option>
-                </select>
-              </div>
-              
-              <div className="mb-6">
-                <label htmlFor="mensagem" className="block text-sm font-medium text-cinza-escuro mb-1">Mensagem (Opcional)</label>
-                <textarea name="mensagem" id="mensagem" rows={4} className="input-form w-full"></textarea>
-              </div>
-              
-              <div className="mb-6">
-                <label className="flex items-center">
-                  <input type="checkbox" name="termos" required className="h-4 w-4 text-verde-vitalidade border-cinza-claro rounded focus:ring-verde-vitalidade" />
-                  <span className="ml-2 text-sm text-cinza-escuro">
-                    Eu li e concordo com os <a href="/termos-e-condicoes" className="text-verde-vitalidade hover:underline">Termos e Condições</a> do programa.
-                  </span>
-                </label>
-              </div>
-              
-              <div className="text-center">
-                <button type="submit" className="btn-primary inline-block px-8 py-3">
-                  Enviar Inscrição
-                </button>
-              </div>
-            </form>
-          </div>
-        </section>
-        
-        {/* FAQ */}
-        <section className="section">
-          <div className="container-custom">
-            <h2 className="text-3xl font-bold mb-12 text-center">Perguntas Frequentes</h2>
-            
-            <div className="max-w-3xl mx-auto space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Qual o público-alvo do Desafio Vitalidade?</h3>
-                <p className="text-cinza-medio">
-                  O programa é ideal para homens e mulheres acima de 40 anos, tanto pessoas saudáveis que buscam otimizar sua longevidade, quanto portadoras de condições crônicas que desejam melhorar sua qualidade de vida.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Preciso ter algum conhecimento prévio sobre saúde ou nutrição?</h3>
-                <p className="text-cinza-medio">
-                  Não. O Desafio Vitalidade é desenhado para ser acessível a todos, independentemente do seu nível de conhecimento. Forneceremos todas as informações e suporte necessários.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">As sessões em grupo são obrigatórias?</h3>
-                <p className="text-cinza-medio">
-                  Embora altamente recomendadas para o máximo aproveitamento do programa e interação com especialistas e outros participantes, a participação não é estritamente obrigatória. Todo o material será disponibilizado.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">O que acontece após os 30 dias do programa?</h3>
-                <p className="text-cinza-medio">
-                  Ao final do desafio, você receberá uma avaliação final e um plano de manutenção para continuar aplicando os aprendizados em sua rotina. Além disso, terá a opção de continuar em nossa comunidade e acessar conteúdos exclusivos.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Existe alguma garantia de resultados?</h3>
-                <p className="text-cinza-medio">
-                  Os resultados podem variar de pessoa para pessoa, mas o programa é baseado em evidências científicas sólidas e, com seu comprometimento, esperamos que você alcance melhorias significativas em sua saúde e bem-estar.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-        
+
+        {/* TODO: Adicionar as seções restantes da Home Page: */}
+        {/* - Números e Credibilidade */}
+        {/* - Prévia do Conteúdo (Blog) */}
+        {/* - CTA Final (Formulário de Inscrição/Lead) */}
+        {/* - FAQ Rápido */}
+
       </main>
-      
       <Footer />
     </>
   );
