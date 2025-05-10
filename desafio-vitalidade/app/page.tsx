@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "@/components/Header";
+import Header from '../components/Header';
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection"; // Importar o HeroSection
 // import Image from 'next/image'; // Descomente se preferir usar o componente Image do Next.js
