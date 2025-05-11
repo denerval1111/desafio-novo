@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 // import metadata from './lib/metadata'; // Removida importação problemática
+import Header from '@/components/Header';
 import './globals.css';
 import '../responsive.css';
 import { Inter } from 'next/font/google';
