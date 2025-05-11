@@ -158,3 +158,11 @@
 .border-azul-longevidade {
   border-color: var(--azul-longevidade);
 }
+
+.text-cinza-escuro {
+  color: var(--cinza-escuro);
+}
+
+.bg-cinza-claro {
+  background-color: var(--cinza-claro);
+}
