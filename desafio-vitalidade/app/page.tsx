@@ -109,7 +109,7 @@ export default function HomePage() {
 
   return (
     <>
-      <Header />
+     
       <main className="text-gray-800">
         {/* Hero Section - Deve ser o primeiro elemento visual abaixo do Header */}
         <HeroSection
