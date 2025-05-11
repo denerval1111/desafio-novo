@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/Header'; // Corrigido o caminho da importação
+import Header from '../../components/Header'; // Corrigido o caminho da importação
 import Footer from '@/components/Footer'; // Corrigido o caminho da importação
 
 export default function Inscricao() {
